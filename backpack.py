@@ -4,7 +4,7 @@ def backpack():
     while True:
         inp = input("> ").strip()
         if inp == "QUIT":
-            PRINT("Quitting backpack.py")
+            print("Quitting backpack.py")
             break
         else:
             parts = inp.split()
