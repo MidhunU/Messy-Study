@@ -25,11 +25,22 @@ class LinkedList:
         print(count)
         return count 
 
+    def find_middle(self):
+        slow = self.head
+        fast = self.head
+        count = 0
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            count += 1
+        print (slow.data)
+        return count
+
+
     def insert_middle(self, data):
         itr = self.head
-        count = self.counter()
-        position = count//2
-        for _ in range (position-1):
+        middle = self.find_middle()
+        for _ in range (middle - 1):
             itr = itr.next
         itr.next = Node(data, itr.next)
 
@@ -67,5 +78,5 @@ if __name__ == '__main__':
     llist.insert_middle(47)
     llist.insert_at_pos(93)
     llist.insert_at_pos(1007)
-    llist.counter()
     llist.print()
+    llist.find_middle()
